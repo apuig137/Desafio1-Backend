@@ -59,9 +59,9 @@ class ProductManager{
     }
 }
 
-let proteina = new ProductManager
-proteina.addProduct("Jamon natural", "Jamon natural embasado al vacio de 150grs", 3500, "url foto", "abc123", 20)
-proteina.addProduct("Carton de leche", "url foto", "abc124", 20)
-proteina.addProduct("Queso Dambo", "Pedaso de queso Dambo embaso con un peso de 300grs", 3500, "url foto", "abc123", 20)
-proteina.getProducts()
-proteina.getProductById(1)
+let productos = new ProductManager
+productos.addProduct("Jamon natural", "Jamon natural embasado al vacio de 150grs", 3500, "url foto", "abc123", 20)
+productos.addProduct("Carton de leche", "url foto", "abc124", 20)
+productos.addProduct("Queso Dambo", "Pedaso de queso Dambo embaso con un peso de 300grs", 3500, "url foto", "abc123", 20)
+productos.getProducts()
+productos.getProductById(1)
