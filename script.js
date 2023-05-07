@@ -30,20 +30,15 @@ class ProductManager{
             stock
         }
 
-        let incompleteKeys = []
         for (const key in product) {
             if(!product[key]){
-                incompleteKeys.push(key)
+                console.log(`No se completaron todos los campos.`)
+                return
             }
         }
-        if(incompleteKeys.length>0){
-            let incompleteKeysJoin = incompleteKeys.join(", ")
-            console.log(`Elementos faltantes: ${incompleteKeysJoin}.`)
-            return
-        }
 
-        const uniqueCode = (product) => product.code
-        if(this.products.some(uniqueCode)){
+        const uniqueCode = product.code
+        if(this.products.some(x => x.code === uniqueCode)){
             console.log("Codigo ya registrado, ingrese un codigo que no este cargado.")
             return
         }
@@ -61,6 +56,7 @@ class ProductManager{
 
 let productos = new ProductManager
 productos.addProduct("Jamon natural", "Jamon natural embasado al vacio de 150grs", 3500, "url foto", "abc123", 20)
+productos.addProduct("Queso Dambo", "Pedaso de queso Dambo embaso con un peso de 300grs", 3500, "url foto", "abc124", 20)
 productos.addProduct("Carton de leche", "url foto", "abc124", 20)
 productos.addProduct("Queso Dambo", "Pedaso de queso Dambo embaso con un peso de 300grs", 3500, "url foto", "abc123", 20)
 productos.getProducts()
